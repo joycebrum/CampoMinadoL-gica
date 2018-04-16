@@ -32,8 +32,7 @@ function gerar(m,n,x)
 	return campo
 }
 
-function verdade(predio,casa)
-{
+function verdade(predio,casa) {
 	let retorno=[]
 	
 	for(let i=0;i<predio.length;i++)
@@ -44,6 +43,56 @@ function verdade(predio,casa)
 		}
 	}	
 	return retorno
+}
+
+function fatorial(n) {
+    if(n === 0 || n === 1) {
+        return 1;
+    }
+    for(var i = n; i > 0; --i) {
+        n *= i;
+    }
+    return n;
+} 
+function possiveis(k, viz) {
+	return fatorial(viz)/ ( fatorial(viz-k) * fatorial(k) )
+}
+
+let temp=0
+
+function BuscaProf(k) {
+	var quant = 0;
+	var resultado=[] 
+	let viznorm = [];
+	viznorm.length=8
+	for(let i =0;i<viznorm.length;i++)
+	{
+		viznorm[i]={usado:false}
+	}
+	Rec(k, 0, temp)
+}
+
+function Rec(k, index, temp) {
+	quant++
+	viznorm[index].usado=true
+	resultado[temp].push(index)
+	if(quant==k)
+	{
+		temp++
+		quant--
+		return
+	}
+	for(let i=0;i<8;i++)
+	{
+		if(!viznorm[i].usado)
+		{
+			Rec(k,i,temp)
+		}
+	}
+}
+
+function formulas(m, n, i, j, k) {
+	
 }
 
 function vai(){

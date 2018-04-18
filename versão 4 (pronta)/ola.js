@@ -51,10 +51,12 @@ function vai(){
 	
 
 
-	let tamx=(document.getElementById("tamanhoX")).value
-	let tamy=(document.getElementById("tamanhoY")).value
+	let tamx=(document.getElementById("tamanhoX1")).value
+	let tamy=(document.getElementById("tamanhoY1")).value
 	var bombas=(document.getElementById("bombas")).value
 	let quantTabuleiros=(document.getElementById("quantTabuleiros")).value
+	let posi=(document.getElementById("posi1")).value
+	let posj=(document.getElementById("posj1")).value
 	
 	
 	let interpretacao=[]
@@ -67,7 +69,7 @@ function vai(){
 
 	console.log(interpretacao)
 
-	let subconjunto=verdade(interpretacao,{i:3,j:2})
+	let subconjunto=verdade(interpretacao,{i:posi,j:posj})
 
 	console.log(subconjunto)
 	
@@ -169,10 +171,10 @@ function vai3()
 		document.getElementById("paragrafoDeSaida").innerHTML = resultadoFinal
 	}
 
-	let tamx=(document.getElementById("tamanhoX")).value
-	let tamy=(document.getElementById("tamanhoY")).value
-	let posi=(document.getElementById("posi")).value
-	let posj=(document.getElementById("posj")).value
+	let tamx=(document.getElementById("tamanhoX2")).value
+	let tamy=(document.getElementById("tamanhoY2")).value
+	let posi=(document.getElementById("posi2")).value
+	let posj=(document.getElementById("posj2")).value
 	let numeroK=(document.getElementById("numeroK")).value
 	let vizinhos
 	let resultadoFinal=""

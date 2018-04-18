@@ -107,7 +107,7 @@ function vai3()
 						}
 						if(i==vizinhos-1)
 						{
-							temp=temp.concat(") v ")
+							temp=temp.concat(") v<br/>")
 						}
 						else
 						{
@@ -167,7 +167,7 @@ function vai3()
 			resultadoFinal=resultadoFinal.slice(0,(resultadoFinal.length-1))
 			resultadoFinal=resultadoFinal.concat(")")
 		}
-		console.log(resultadoFinal) // apagar se for colocar em uma linha só
+		//console.log(resultadoFinal) // apagar se for colocar em uma linha só
 		document.getElementById("paragrafoDeSaida").innerHTML = resultadoFinal
 	}
 

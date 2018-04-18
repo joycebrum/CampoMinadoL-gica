@@ -155,7 +155,18 @@ function vai3()
 		rec(0)
 
 		resultadoFinal=resultadoFinal.slice(0,(resultadoFinal.length-3))
+		if(resultadoFinal=="")
+		{
+			resultadoFinal=resultadoFinal.concat("(")
+			for(let i=0;i<vizinhos;i++)
+			{
+				resultadoFinal=resultadoFinal.concat(" !X" + i + " ^")
+			}
+			resultadoFinal=resultadoFinal.slice(0,(resultadoFinal.length-1))
+			resultadoFinal=resultadoFinal.concat(")")
+		}
 		console.log(resultadoFinal) // apagar se for colocar em uma linha só
+		document.getElementById("paragrafoDeSaida").innerHTML = resultadoFinal
 	}
 
 	let tamx=(document.getElementById("tamanhoX")).value

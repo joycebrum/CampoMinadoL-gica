@@ -156,7 +156,7 @@ function vai3()
 
 		rec(0)
 
-		resultadoFinal=resultadoFinal.slice(0,(resultadoFinal.length-3))
+		resultadoFinal=resultadoFinal.slice(0,(resultadoFinal.length-7))
 		if(resultadoFinal=="")
 		{
 			resultadoFinal=resultadoFinal.concat("(")

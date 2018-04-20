@@ -153,7 +153,7 @@ function vai3()
 				}
 				else
 				{
-					resultado.pussh(i)
+					resultado.push(i)
 					rec(i+1)
 					resultado.pop()
 				}

@@ -24,9 +24,10 @@ function vai(){
 			if(campo[posi][posj]==false)
 			{
 				campo[posi][posj]=true
+				temp++
 			}
 			
-			temp++
+			
 		}
 		
 		return campo
@@ -37,19 +38,13 @@ function vai(){
 		
 		for(let i=0;i<predio.length;i++)
 		{
-			if(predio[i][casa.i][casa.j])
+			if(!predio[i][casa.i][casa.j])
 			{
 				retorno.push(predio[i])
 			}
 		}	
 		return retorno
 	}
-
-
-	
-
-	
-
 
 	let tamx=(document.getElementById("tamanhoX1")).value
 	let tamy=(document.getElementById("tamanhoY1")).value
@@ -66,11 +61,48 @@ function vai(){
 	{
 		interpretacao[i]=gerar(tamx,tamy,bombas)
 	}
-
-	console.log(interpretacao)
-
+	let stringRes=""
+	for(let i=0;i<interpretacao.length;i++)
+	{
+		stringRes=stringRes.concat("{")
+		for(let j=0;j<tamx;j++)
+		{
+			for(let k=0;k<tamy;k++)
+			{
+				if(interpretacao[i][j][k])
+				{
+					stringRes=stringRes.concat("[" + j + "," + k + "] ")
+				}	
+			}
+		}
+		stringRes=stringRes.slice(0,(stringRes.length-1))
+		stringRes=stringRes.concat("} \n")
+	}
+	console.log("Resposta da 1:")
+	console.log(stringRes)
+	console.log(interpretacao)	
+	
 	let subconjunto=verdade(interpretacao,{i:posi,j:posj})
-
+	
+	stringRes=""
+	for(let i=0;i<subconjunto.length;i++)
+	{
+		stringRes=stringRes.concat("{")
+		for(let j=0;j<tamx;j++)
+		{
+			for(let k=0;k<tamy;k++)
+			{
+				if(subconjunto[i][j][k])
+				{
+					stringRes=stringRes.concat("[" + j + "," + k + "] ")
+				}	
+			}
+		}
+		stringRes=stringRes.slice(0,(stringRes.length-1))
+		stringRes=stringRes.concat("} \n")
+	}
+	console.log("Resposta da 2:")
+	console.log(stringRes)
 	console.log(subconjunto)
 	
 }
@@ -82,7 +114,7 @@ function vai3()
 
 		let rec = (valor)=>{
 
-			for(let i=valor;i<vizinhos;i++) // mudar de 5 para numero de vizinhos
+			for(let i=valor;i<vizinhos;i++)
 			{
 				if(resultado.length==k-1)
 				{
@@ -121,7 +153,7 @@ function vai3()
 				}
 				else
 				{
-					resultado.push(i)
+					resultado.pussh(i)
 					rec(i+1)
 					resultado.pop()
 				}
@@ -176,6 +208,7 @@ function vai3()
 	let posi=(document.getElementById("posi2")).value
 	let posj=(document.getElementById("posj2")).value
 	let numeroK=(document.getElementById("numeroK")).value
+	
 	let vizinhos
 	let resultadoFinal=""
 	let resultado=[]
